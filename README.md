@@ -97,6 +97,24 @@ cd Library-Management-Python
 python main.py
 ```
 
+5.Funcionalidades
+
+- Implementadas
+  *Python.
+  *SQL.
+  *Pilha e Fila.
+- Em desenvolvimento
+  *Cliente com interface gráfica.
+- Planejadas
+  *Arquitetura Cliente-Servidor.
+  *Cliente com interface gráfica.
+  *Servidor responsável por regras de negócio.
+  *Comunicação via sockets TCP.
+  *Uso futuro de banco de dados (SQLite ou PostgreSQL).
+  *Implementação de API para expansão.
+  *Possível uso de threads para concorrência.
+
+
 ## 👨‍💻 Autores
 
 Projeto desenvolvido por:
