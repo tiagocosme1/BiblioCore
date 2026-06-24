@@ -328,28 +328,8 @@ docker-compose ps
 docker-compose restart servidor-biblioteca
 ```
 
-## 📚 Referências
-
-- Python threading: https://docs.python.org/3/library/threading.html
-- TCP Sockets: https://docs.python.org/3/library/socket.html
-- Docker Compose: https://docs.docker.com/compose/
-
 ## 👥 Autores
 
-- Tiago (Backend + Arquitetura)
-- Álex (Sincronização + Testes)
-- Waldo (Docker + Deployment)
-
-## 📄 Licença
-
-MIT License - veja LICENSE.txt para detalhes
-
-## 🤝 Contribuições
-
-Pull requests são bem-vindos! Para mudanças maiores, abra uma issue primeiro.
-
----
+- Tiago, Álex, Waldo 
 
 **Desenvolvido para disciplina de Programação Concorrente e Distribuída**
-
-Última atualização: Junho 2026
