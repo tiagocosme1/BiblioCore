@@ -331,5 +331,3 @@ docker-compose restart servidor-biblioteca
 ## 👥 Autores
 
 - Tiago, Álex, Waldo 
-
-**Desenvolvido para disciplina de Programação Concorrente e Distribuída**
