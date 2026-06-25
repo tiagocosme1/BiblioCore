@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+
+  servidor-biblioteca:
+    build: .
+    container_name: codigoprojeto-servidor-biblioteca
+    ports:
+      - "8086:8086"
+    volumes:
+      - biblioteca-data:/app/data
+    networks:
+      - rede-biblioteca
+    environment:
+      DATA_FILE: "/app/data/biblioteca.dat"
+      LOG_DIR: "/logs"
+    restart: unless-stopped
+
+  cliente-biblioteca:
+    build: .
+    command: python /app/cliente.py
+    profiles: ["manual"]
+    networks:
+      - rede-biblioteca
+    volumes:
+      - ./logs:/logs
+    environment:
+      SERVIDOR_HOST: "servidor-biblioteca"
+      SERVIDOR_PORT: "8086"
+    depends_on:
+      - servidor-biblioteca
+    stdin_open: true
+    tty: true
+
+  admin-biblioteca:
+    build: .
+    command: python /app/admin.py
+    profiles: ["manual"]
+    networks:
+      - rede-biblioteca
+    volumes:
+      - ./logs:/logs
+    environment:
+      SERVIDOR_HOST: "servidor-biblioteca"
+      SERVIDOR_PORT: "8086"
+    depends_on:
+      - servidor-biblioteca
+    stdin_open: true
+    tty: true
+
+networks:
+  rede-biblioteca:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+
+volumes:
+  biblioteca-data:
